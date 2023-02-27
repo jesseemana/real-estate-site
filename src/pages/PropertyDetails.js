@@ -11,12 +11,12 @@ const PropertyDetails = () => {
   const [house, setHouse] = useState({})
 
 
-  useEffect(() => {
-    const home = housesData.find((house) => house.id === parseInt(id));
-    setHouse(home)
-    setTitle(house.name)
+  useEffect( () => {
+    const home = housesData.find( ( house ) => house.id === parseInt( id ) );
+    setHouse( home );
+    setTitle( house.name );
     document.title = title;
-  })
+  }, [ house, title, id ] );
 
   setTimeout(() => {
     setLoading(false)
